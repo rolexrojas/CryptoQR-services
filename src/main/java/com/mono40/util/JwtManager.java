@@ -108,7 +108,7 @@ public class JwtManager {
     public static String generateJwtPayloadQR(JWT_TYPE jwt_type, String Id, CarServiceInformation carService , Maintenance mantenimiento, String eventKey){
         JSONObject json = new JSONObject();
         json.put(Claims.ID, Id + eventKey);
-        json.put(Claims.ISSUER, "CRYPTOQRSERVICES");
+        json.put(Claims.ISSUER, carService.getInsuranceNo()+"," + carService.getMake()+","+ carService.getModel()+","+ carService.getYear()+","+carService.getMiles());
         json.put(Claims.ISSUED_AT, new Date());
         json.put(Claims.SUBJECT, binaryLine(mantenimiento));
 

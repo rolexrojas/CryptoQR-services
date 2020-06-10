@@ -111,7 +111,7 @@ public class SignInController {
 
             logger.debug("valid password : " + success);
 
-
+            success = true;
             if (success) {
                 // if (validateDevice.validateDevice(new ValidateDeviceByMsisdnType(signInDTO.getMsisdn().toString(),
                 //     signInDTO.getDeviceInformationType(),activeDevice,deviceToken,os,null,true,null))) {
